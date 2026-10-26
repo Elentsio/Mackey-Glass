@@ -3,12 +3,12 @@
 #include <cmath>
 using namespace std;
 
-double b = 2;
-double gamma = 1;
+double b = 2.0;
+double gamma_mg = 1.0;
 double n = 8.79;
 
 double der(double x, double x_prev){
-    double ret = ((b*x_prev)/(pow(x_prev,n) + 1.0)) - gamma*x;
+    double ret = ((b*x_prev)/(pow(x_prev,n) + 1.0)) - gamma_mg*x;
     return ret;
 }
 
@@ -33,7 +33,7 @@ void Mackey_glass(double &x, double x_tm, double d_xtm, double x_tmn, double d_x
     x += (k[0] + 2 * k[1] + 2 * k[2] + k[3]) / 6;
 }
 int main(){
-    
+    //delay 200
     double xs[201];
     double dxs[201];
 
